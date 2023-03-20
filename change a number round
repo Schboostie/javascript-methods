@@ -1,0 +1,93 @@
+//https://www.codewars.com/kata/5521d84b95c172461d0000a4/train/javascript
+
+let number = 1094855
+let numStr = number.toString()
+let numSplit = numStr.split("")
+let firstArr =[]
+console.log(numSplit)
+
+let numLen = numSplit.length
+
+console.log(numLen)
+
+if(numLen%2 == 0)
+{
+
+for (let i = 0; i < numLen/2 ;i++ )
+{
+firstArr.push(numSplit[i])
+console.log(firstArr)
+}
+console.log(firstArr)
+
+let firstStr = ""
+for (let j = 0; j < firstArr.length ;j++ )
+{
+firstStr += firstArr[j]
+console.log(firstStr)
+}
+
+
+let secondArr =[]
+for (let k = numLen/2 ; k < numLen ;k++ )
+{
+secondArr.push(numSplit[k])
+console.log(secondArr)
+}
+
+let secondStr = ""
+for (let j = 0; j < secondArr.length ;j++ )
+{
+secondStr += secondArr[j]
+console.log(secondStr)
+}
+
+let finalArr = firstArr.concat(...secondArr)
+console.log(finalArr)
+console.log("000"+firstStr+" "+secondStr+"0000")
+}
+
+else{
+let firstArr =[]
+for (let i = 0; i < (numLen-1)/2 ;i++ )
+{
+firstArr.push(numSplit[i])
+console.log(firstArr)
+}
+
+let firstStr = ""
+for (let j = 0; j < firstArr.length ;j++ )
+{
+firstStr += firstArr[j]
+console.log(firstStr)
+}
+
+let secondArr =[]
+for (let j = (numLen-1)/2 + 1 ; j < numLen ;j++ )
+{
+secondArr.push(numSplit[j])
+console.log(secondArr)
+}
+
+let secondStr = ""
+for (let j = 0; j < secondArr.length ;j++ )
+{
+secondStr += secondArr[j]
+console.log(secondStr)
+}
+
+
+let midArr = [numSplit[(numLen-1)/2]]
+
+let finalArr = "000" +firstStr+" "+midArr+" "+secondStr+"000"
+console.log(finalArr)
+}
+
+
+
+
+
+
+
+
+
