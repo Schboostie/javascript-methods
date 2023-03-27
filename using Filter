@@ -1,0 +1,95 @@
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const filteredNumbers = numbers.filter((num) => {
+  const isEven = num % 2 === 0;
+  console.log(`Checking ${num} - isEven: ${isEven}`);
+  return isEven;
+});
+
+console.log(`Filtered numbers: ${filteredNumbers}`);
+
+/*
+
+Checking 1 - isEven: false
+Checking 2 - isEven: true
+Checking 3 - isEven: false
+Checking 4 - isEven: true
+Checking 5 - isEven: false
+Checking 6 - isEven: true
+Checking 7 - isEven: false
+Checking 8 - isEven: true
+Checking 9 - isEven: false
+Checking 10 - isEven: true
+Filtered numbers: 2,4,6,8,10
+
+
+*/
+
+
+
+const names = ["John", "Alice", "Jenny", "Bob", "Julie"];
+
+const filteredNames = names.filter((name) => {
+  const startsWithJ = name.startsWith("J");
+  console.log(`Checking ${name} - startsWithJ: ${startsWithJ}`);
+  return startsWithJ;
+});
+
+console.log(`Filtered names: ${filteredNames}`);
+
+
+/*
+Checking John - startsWithJ: true
+Checking Alice - startsWithJ: false
+Checking Jenny - startsWithJ: true
+Checking Bob - startsWithJ: false
+Checking Julie - startsWithJ: true
+Filtered names: John,Jenny,Julie
+
+
+*/
+
+
+const numbers = [1, 7, 3, 8, 2, 9, 4, 10];
+
+const filteredNumbers = numbers.filter((num) => {
+  const greaterThan5 = num > 5;
+  console.log(`Checking ${num} - greaterThan5: ${greaterThan5}`);
+  return greaterThan5;
+});
+
+console.log(`Filtered numbers: ${filteredNumbers}`);
+
+
+/*
+Checking 1 - greaterThan5: false
+Checking 7 - greaterThan5: true
+Checking 3 - greaterThan5: false
+Checking 8 - greaterThan5: true
+Checking 2 - greaterThan5: false
+Checking 9 - greaterThan5: true
+Checking 4 - greaterThan5: false
+Checking 10 - greaterThan5: true
+Filtered numbers: 7,8,9,10
+
+*/
+
+
+const words = ["hello", "world", "example", "apple", "orange"];
+
+const filteredWords = words.filter((word) => {
+  const containsE = word.includes("e");
+  console.log(`Checking ${word} - containsE: ${containsE}`);
+  return containsE;
+});
+
+console.log(`Filtered words: ${filteredWords}`);
+
+/*
+Checking hello - containsE: true
+Checking world - containsE: false
+Checking example - containsE: true
+Checking apple - containsE: true
+Checking orange - containsE: true
+Filtered words: hello,example,apple,orange
+*/
