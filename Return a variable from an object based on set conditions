@@ -1,0 +1,56 @@
+let myObject = { 
+  key1: "value1", 
+  key2: "value2", 
+  key3: "value3"
+};
+
+let myArray = ["value1", "value2", "value3"];
+
+let searchValue = "value2";
+
+for (let key in myObject) {
+  if (myObject[key] === searchValue) {
+    console.log(key); // Output: "key2"
+    break;
+  }
+}
+
+
+// Method 1
+
+function chooseMeal(mealArray) {
+  if (mealArray.length === 0) {
+    return "Nothing :(";
+  } else if (mealArray.length === 1) {
+    return mealArray[0].name;
+  } else {
+    const sortedMeals = mealArray.sort((a, b) => a.price - b.price);
+    return sortedMeals[1].name;
+  }
+}
+
+//Method 2
+
+function chooseMeal(mealArray) {
+  return mealArray.reduce((prev, curr) => prev.price < curr.price ? prev : curr, { name: null, price: Infinity }).name ?? "Nothing :(";
+}
+
+
+//Method 3
+
+function chooseMeal(mealArray) {
+  const lowestPrice = Math.min(...mealArray.map(meal => meal.price));
+  const chosenMeal = mealArray.find(meal => meal.price === lowestPrice);
+  return chosenMeal ? chosenMeal.name : "Nothing :(";
+}
+
+
+//Method 4
+
+function chooseMeal(mealArray) {
+  const cheapMeals = mealArray.filter(meal => meal.price !== null).sort((a, b) => a.price - b.price);
+  return cheapMeals.length > 1 ? cheapMeals[1].name : cheapMeals[0]?.name ?? "Nothing :(";
+}
+
+
+
