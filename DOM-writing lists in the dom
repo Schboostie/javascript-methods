@@ -1,0 +1,66 @@
+//<div id="list-container"></div>
+
+const myObj = {
+  item1: "First Item",
+  item2: "Second Item",
+  item3: "Third Item"
+};
+
+const listContainer = document.getElementById("list-container");
+const list = document.createElement("ul");
+
+for (const item in myObj) {
+  const listItem = document.createElement("li");
+  listItem.textContent = myObj[item];
+  list.appendChild(listItem);
+}
+
+listContainer.appendChild(list);
+
+
+//<div id="list-container"></div>
+
+const myObj = {
+  item1: "First Item",
+  item2: {
+    subItem1: "Sub-Item 1",
+    subItem2: "Sub-Item 2",
+    subItem3: ["Sub-Item 3a", "Sub-Item 3b"]
+  },
+  item3: "Third Item"
+};
+
+const listContainer = document.getElementById("list-container");
+const list = document.createElement("ul");
+
+for (const item in myObj) {
+  const listItem = document.createElement("li");
+  
+  if (typeof myObj[item] === "object") {
+    listItem.textContent = item;
+    const subList = document.createElement("ul");
+    
+    if (Array.isArray(myObj[item])) {
+      myObj[item].forEach(subItem => {
+        const subListItem = document.createElement("li");
+        subListItem.textContent = subItem;
+        subList.appendChild(subListItem);
+      });
+    } else {
+      for (const subItem in myObj[item]) {
+        const subListItem = document.createElement("li");
+        subListItem.textContent = myObj[item][subItem];
+        subList.appendChild(subListItem);
+      }
+    }
+    
+    listItem.appendChild(subList);
+  } else {
+    listItem.textContent = myObj[item];
+  }
+  
+  list.appendChild(listItem);
+}
+
+listContainer.appendChild(list);
+
