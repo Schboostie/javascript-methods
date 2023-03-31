@@ -1,0 +1,90 @@
+/*
+
+
+It first splits the paragraph into an array of words using the split(" ") method.
+It then creates a new p element and a select element using the document.createElement method.
+It iterates over the colours array and creates a new option element for each colour, setting its innerText and value properties, and appends it to the select element.
+It then iterates over the words array using the map method to create a new span element for each word, setting its innerText to the word plus a space, and adding a click event listener to it that checks the value of the select element and sets the background color of the span accordingly. It then returns the outerHTML of the span element.
+It joins the resulting array of span elements into a single string and sets it as the innerHTML of the p element.
+Finally, it appends both the p and select elements to the content div using the appendChild method.
+
+
+*/
+
+
+function highlightWords(paragraph, colours) {
+  const words = paragraph.split(" ");
+  const content = document.getElementById("content");
+  const p = document.createElement("p");
+  const select = document.createElement("select");
+
+  colours.forEach((colour) => {
+    const option = document.createElement("option");
+    option.innerText = colour;
+    option.value = colour;
+    select.appendChild(option);
+  });
+
+  p.innerHTML = words
+    .map((word) => {
+      const span = document.createElement("span");
+      span.innerText = word + " ";
+      span.addEventListener("click", (e) => {
+        const selectedColour = select.value;
+        if (selectedColour === "none") {
+          span.style.backgroundColor = "";
+        } else {
+          span.style.backgroundColor = selectedColour;
+        }
+      });
+      return span.outerHTML;
+    })
+    .join("");
+
+  content.appendChild(p);
+  content.appendChild(select);
+}
+/* Changing colours of highlights on a page using class names and a function run by on click
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change Color Example</title>
+	<style>
+		.highlighted {
+			background-color: white;
+		}
+
+		.highlighted.yellow {
+			background-color: yellow;
+		}
+
+		.highlighted.green {
+			background-color: green;
+		}
+
+		.highlighted.blue {
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="changeColor('highlighted', 'yellow')">Yellow</button>
+	<button onclick="changeColor('highlighted', 'green')">Green</button>
+	<button onclick="changeColor('highlighted', 'blue')">Blue</button>
+
+	<p class="highlighted yellow">This is a yellow highlighted paragraph.</p>
+	<div class="highlighted green">This is a green highlighted div.</div>
+	<span class="highlighted blue">This is a blue highlighted span.</span>
+
+	<script>
+		function changeColor(className, color) {
+			const elements = document.getElementsByClassName(className);
+			for (let i = 0; i < elements.length; i++) {
+				elements[i].style.backgroundColor = color;
+			}
+		}
+	</script>
+</body>
+</html>
+*/
