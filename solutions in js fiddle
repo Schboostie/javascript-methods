@@ -1,0 +1,24 @@
+//getting the biggest number 
+
+function descendingOrder(n){
+  //...
+let newNum =  n.toString().split('').map(Number);
+console.log(newNum)
+
+let funNum = newNum.sort(function(a, b) {
+  return b - a;
+});
+
+console.log(funNum)
+
+let result = funNum.join("")
+console.log(result)
+
+let numResult = parseInt(result)
+
+console.log(numResult)
+
+return numResult
+}
+
+descendingOrder(8990870452)
