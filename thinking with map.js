@@ -69,3 +69,50 @@ console.log(countries); // Output: ['Argentina', 'Croatia', 'United States']
 
 const greetings = list1.map((developer) => `Hi ${developer.firstName}, what do you like the most about ${developer.language}?`);
 console.log(greetings); // Output: ['Hi Sofia, what do you like the most about Java?', 'Hi Lukas, what do you like the most about Python?', 'Hi Madison, what do you like the most about Ruby?']
+
+
+function filterByKeys(arr, keys) {
+  // Use the filter method to loop through the array and return a new array with filtered objects
+  const filteredArray = arr.filter((obj) => {
+    // Use the every method to check if all the keys in the keys array match the corresponding values in the object
+    return keys.every((key) => obj[key]);
+  });
+  // Return the filtered array
+  return filteredArray;
+}
+In this function, the every method is used to check if all the keys in the keys array match the corresponding values in the object. If all keys match, the object is included in the new array returned by filter.
+
+To use this function with the list1 array provided, you could call it like this:
+
+
+const filteredList = filterByKeys(list1, ['firstName', 'age']);
+console.log(filteredList);
+This would create a new array called filteredList that only includes objects where the firstName and age keys are present and have a truthy value. The output would be:
+
+
+[
+  { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
+  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' },
+  { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' }
+]
+//In this case, all objects in the original array are included in the filtered array because all of them have both firstName and age keys with truthy values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
