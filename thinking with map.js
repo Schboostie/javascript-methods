@@ -44,3 +44,28 @@ return list
   greetDevelopers(list1)
   
   */
+
+
+
+//Some methods on the above array with map 
+
+//1. Map over the list1 array and create a new array with just the first names:
+
+const firstNames = list1.map((developer) => developer.firstName);
+console.log(firstNames); // Output: ['Sofia', 'Lukas', 'Madison']
+
+//2. Map over the list1 array and create a new array with just the full names:
+
+const fullNames = list1.map((developer) => `${developer.firstName} ${developer.lastName}`);
+console.log(fullNames); // Output: ['Sofia I.', 'Lukas X.', 'Madison U.']
+
+
+//3. Map over the list1 array and create a new array with just the countries:
+
+const countries = list1.map((developer) => developer.country);
+console.log(countries); // Output: ['Argentina', 'Croatia', 'United States']
+
+//4. Map over the list1 array and create a new array with just the greetings:
+
+const greetings = list1.map((developer) => `Hi ${developer.firstName}, what do you like the most about ${developer.language}?`);
+console.log(greetings); // Output: ['Hi Sofia, what do you like the most about Java?', 'Hi Lukas, what do you like the most about Python?', 'Hi Madison, what do you like the most about Ruby?']
