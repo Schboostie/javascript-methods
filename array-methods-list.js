@@ -19,7 +19,8 @@ slice(): Returns a shallow copy of a portion of an array into a new array object
 some(): Tests whether at least one element in the array passes the test implemented by the provided function.
 sort(): Sorts the elements of an array in place and returns the sorted array.
 splice(): Changes the contents of an array by removing or replacing existing elements and/or adding new elements.
-`toString()
+toString(): Returns a string representing the array and its elements.
+unshift(): Adds one or more elements to the beginning of an array and returns the new length of the array.
 
 
 */
