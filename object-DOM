@@ -1,0 +1,96 @@
+const programmers = [
+  {
+    name: "Ada Lovelace",
+    dob: "December 10, 1815",
+    placeOfBirth: "London, England",
+    languages: ["Analytical Engine", "Fortran"],
+    achievements: [
+      "First computer programmer",
+      "Created the algorithm for Babbage's Analytical Engine"
+    ]
+  },
+  {
+    name: "Grace Hopper",
+    dob: "December 9, 1906",
+    placeOfBirth: "New York City, USA",
+    languages: ["COBOL", "FLOW-MATIC", "MATH-MATIC"],
+    achievements: [
+      "Invented the first compiler",
+      "Coined the term 'debugging'"
+    ]
+  },
+  {
+    name: "Alan Turing",
+    dob: "June 23, 1912",
+    placeOfBirth: "London, England",
+    languages: ["Turing machine", "Colossus", "ACE", "EDSAC"],
+    achievements: [
+      "Father of theoretical computer science",
+      "Cracked the Enigma code during World War II"
+    ]
+  },
+  {
+    name: "Dennis Ritchie",
+    dob: "September 9, 1941",
+    placeOfBirth: "Bronxville, New York, USA",
+    languages: ["C", "Unix"],
+    achievements: [
+      "Created the C programming language",
+      "Co-developed the Unix operating system"
+    ]
+  },
+  {
+    name: "Linus Torvalds",
+    dob: "December 28, 1969",
+    placeOfBirth: "Helsinki, Finland",
+    languages: ["C", "Linux"],
+    achievements: [
+      "Created the Linux kernel",
+      "Pioneered open-source software development"
+    ]
+  },
+  {
+    name: "Brendan Eich",
+    dob: "July 4, 1961",
+    placeOfBirth: "Pittsburgh, Pennsylvania, USA",
+    languages: ["JavaScript"],
+    achievements: [
+      "Created the JavaScript programming language",
+      "Co-founded the Mozilla project"
+    ]
+  },
+  {
+    name: "Guido van Rossum",
+    dob: "January 31, 1956",
+    placeOfBirth: "Haarlem, Netherlands",
+    languages: ["Python"],
+    achievements: [
+      "Created the Python programming language",
+      "Was the BDFL (Benevolent Dictator For Life) of the Python community"
+    ]
+  }
+];
+
+//names beginning with vowels
+
+function getVowelNames(names) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  return names.filter(name => vowels.includes(name.charAt(0).toLowerCase()));
+  
+  
+  //
+}
+
+
+function getNamesAndAchievements(programmers) {
+  const results = [];
+
+  for (let i = 0; i < programmers.length; i++) {
+    const programmer = programmers[i];
+    const { name, achievements } = programmer;
+
+    results.push({ name, achievements });
+  }
+
+  return results;
+}
