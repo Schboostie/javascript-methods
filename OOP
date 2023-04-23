@@ -307,3 +307,44 @@ const tvSeries = [
     leadActors: ["Millie Bobby Brown", "Finn Wolfhard", "Noah Schnapp", "Caleb McLaughlin", "Gaten Matarazzo", "Sadie Sink", "Maya Hawke", "Joe Keery"]
   }
   ]
+  
+  
+  function findSeriesWithSameLastName(tvSeries) {
+  const lastNameMap = new Map();
+  const result = [];
+
+  for (const series of tvSeries) {
+    const { name, leadActors } = series;
+    const actorLastNames = leadActors.map(actor => actor.split(" ")[1]);
+
+    for (const lastName of actorLastNames) {
+      if (lastNameMap.has(lastName)) {
+        lastNameMap.get(lastName).push(name);
+      } else {
+        lastNameMap.set(lastName, [name]);
+      }
+    }
+  }
+
+  for (const [lastName, seriesList] of lastNameMap.entries()) {
+    if (seriesList.length > 1) {
+      const seriesObject = {};
+      for (const seriesName of seriesList) {
+        seriesObject[seriesName] = [];
+        const actors = tvSeries.find(series => series.name === seriesName).leadActors;
+        seriesObject[seriesName] = seriesObject[seriesName].concat(actors);
+      }
+      result.push(seriesObject);
+    }
+  }
+
+  return result;
+}
+const seriesWithSameLastName = findSeriesWithSameLastName(tvSeries);
+console.log(seriesWithSameLastName);
+
+
+his should output an array of objects, where each object represents a TV series with actors who share the same last name. 
+Each object has a seriesName key with the name of the TV series, and an actors key with an array of actor names.
+For example:
+
