@@ -1,0 +1,309 @@
+//Write a function that takes in an array of numbers and returns a new array with only the even numbers.
+
+function filterEvenNumbers(numbers) {
+  const evenNumbers = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      evenNumbers.push(numbers[i]);
+    }
+  }
+  return evenNumbers;
+}
+
+// example usage
+console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6])); // output: [2, 4, 6]
+
+
+/*
+
+Sure, here's a harder example for an upper-intermediate level:
+
+Question:
+You are given an array of integers, write a function to find the maximum sum of any contiguous subarray of the given array.
+*/
+
+function findMaxSumSubarray(arr) {
+  let maxSum = -Infinity;
+  let currentSum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    currentSum += arr[i];
+    if (currentSum > maxSum) {
+      maxSum = currentSum;
+    }
+    if (currentSum < 0) {
+      currentSum = 0;
+    }
+  }
+  return maxSum;
+}
+
+// example usage
+console.log(findMaxSumSubarray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // output: 6
+
+
+
+//Question 1: Create a class Person with properties name and age, and a method getDetails() that returns a string with the person's name and age.
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getDetails() {
+    return `${this.name} is ${this.age} years old.`;
+  }
+}
+
+// example usage
+const person1 = new Person("John", 30);
+console.log(person1.getDetails()); // output: John is 30 years old.
+
+
+//Create a class Rectangle with properties width and height, and methods getArea() that returns the area of the rectangle, and getPerimeter() that returns the perimeter of the rectangle.
+
+
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+
+  getPerimeter() {
+    return 2 * (this.width + this.height);
+  }
+}
+
+// example usage
+const rectangle1 = new Rectangle(5, 10);
+console.log(rectangle1.getArea()); // output: 50
+console.log(rectangle1.getPerimeter()); // output: 30
+
+
+/*
+
+Create a class BankAccount with properties balance and accountNumber, and methods deposit(amount) that adds the given amount to the balance, 
+and withdraw(amount) that subtracts the given amount from the balance.
+*/
+
+
+class BankAccount {
+  constructor(balance, accountNumber) {
+    this.balance = balance;
+    this.accountNumber = accountNumber;
+  }
+
+  deposit(amount) {
+    this.balance += amount;
+  }
+
+  withdraw(amount) {
+    if (this.balance >= amount) {
+      this.balance -= amount;
+    } else {
+      console.log("Insufficient balance.");
+    }
+  }
+}
+
+// example usage
+const account1 = new BankAccount(1000, "123456");
+account1.deposit(500);
+console.log(account1.balance); // output: 1500
+account1.withdraw(2000); // output: Insufficient balance.
+console.log(account1.balance); // output: 1500
+
+
+
+/*
+Question 4:
+Create a class Employee with properties name, salary, and hireDate, and a method getSalaryDetails() 
+that returns a string with the employee's name, salary, and hire date.
+
+*/
+
+class Employee {
+  constructor(name, salary, hireDate) {
+    this.name = name;
+    this.salary = salary;
+    this.hireDate = hireDate;
+  }
+
+  getSalaryDetails() {
+    return `${this.name} earns $${this.salary} and was hired on ${this.hireDate}.`;
+  }
+}
+
+// example usage
+const employee1 = new Employee("John", 50000, "01/01/2022");
+console.log(employee1.getSalaryDetails()); // output: John earns $50000 and was hired on 01/01/2022.
+
+
+/*
+Question 5:
+Create a class Shape with a method getArea() that throws an error with the message "Method not implemented" 
+since the area calculation depends on the specific shape.
+Create two classes Rectangle and Circle that extend Shape and implement their own getArea() methods.
+
+*/
+
+class Shape {
+  getArea() {
+    throw new Error("Method not implemented.");
+ 
+//-------------------------------------------------This is the next part of the file with more complex questions -------------------------------------------------------------
+
+
+const tvSeries = [
+  {
+    name: "Breaking Bad",
+    rating: 9.5,
+    season: 5,
+    subscriptionCost: 8.99,
+    director: "Vince Gilligan",
+    leadActor: "Bryan Cranston"
+  },
+  {
+    name: "Game of Thrones",
+    rating: 9.3,
+    season: 8,
+    subscriptionCost: 14.99,
+    director: "David Benioff",
+    leadActor: "Kit Harington"
+  },
+  {
+    name: "The Sopranos",
+    rating: 9.2,
+    season: 6,
+    subscriptionCost: 12.99,
+    director: "David Chase",
+    leadActor: "James Gandolfini"
+  },
+  {
+    name: "Friends",
+    rating: 8.9,
+    season: 10,
+    subscriptionCost: 6.99,
+    director: "Kevin S. Bright",
+    leadActor: "Jennifer Aniston"
+  },
+  {
+    name: "Stranger Things",
+    rating: 8.8,
+    season: 4,
+    subscriptionCost: 9.99,
+    director: "The Duffer Brothers",
+    leadActor: "Millie Bobby Brown"
+  }
+];
+
+
+
+//write a function to return all the series with a rating above 9 to an array
+
+
+function getHighRatedSeries(tvSeries) {
+  const highRatedSeries = [];
+  
+  for (let i = 0; i < tvSeries.length; i++) {
+    if (tvSeries[i].rating > 9) {
+      highRatedSeries.push(tvSeries[i]);
+    }
+  }
+  
+  return highRatedSeries;
+}
+
+
+const highRatedSeries = getHighRatedSeries(tvSeries);
+console.log(highRatedSeries);
+
+
+
+const tvSeries = [
+  {
+    name: "Breaking Bad",
+    rating: 9.5,
+    season: 5,
+    subscriptionCost: 8.99,
+    director: "Vince Gilligan",
+    leadActors: ["Bryan Cranston", "Aaron Paul"]
+  },
+  {
+    name: "Game of Thrones",
+    rating: 9.3,
+    season: 8,
+    subscriptionCost: 14.99,
+    director: "David Benioff",
+    leadActors: ["Kit Harington", "Emilia Clarke"]
+  },
+  {
+    name: "The Sopranos",
+    rating: 9.2,
+    season: 6,
+    subscriptionCost: 12.99,
+    director: "David Chase",
+    leadActors: ["James Gandolfini", "Edie Falco"]
+  },
+  {
+    name: "Friends",
+    rating: 8.9,
+    season: 10,
+    subscriptionCost: 6.99,
+    director: "Kevin S. Bright",
+    leadActors: ["Jennifer Aniston", "Courteney Cox", "Lisa Kudrow", "Matt LeBlanc", "Matthew Perry", "David Schwimmer"]
+  },
+  {
+    name: "Stranger Things",
+    rating: 8.8,
+    season: 4,
+    subscriptionCost: 9.99,
+    director: "The Duffer Brothers",
+    leadActors: ["Millie Bobby Brown", "Finn Wolfhard", "Noah Schnapp", "Caleb McLaughlin", "Gaten Matarazzo", "Sadie Sink"]
+  },
+  {
+    name: "The Crown",
+    rating: 8.7,
+    season: 4,
+    subscriptionCost: 12.99,
+    director: "Peter Morgan",
+    leadActors: ["Olivia Colman", "Tobias Menzies", "Helena Bonham Carter"]
+  },
+  {
+    name: "Chernobyl",
+    rating: 9.4,
+    season: 1,
+    subscriptionCost: 9.99,
+    director: "Johan Renck",
+    leadActors: ["Jared Harris", "Stellan Skarsgård", "Emily Watson"]
+  },
+  {
+    name: "The Mandalorian",
+    rating: 8.8,
+    season: 2,
+    subscriptionCost: 12.99,
+    director: "Jon Favreau",
+    leadActors: ["Pedro Pascal", "Gina Carano"]
+  },
+  {
+    name: "Breaking Bad: El Camino",
+    rating: 7.3,
+    season: 1,
+    subscriptionCost: 8.99,
+    director: "Vince Gilligan",
+    leadActors: ["Aaron Paul"]
+  },
+  {
+    name: "Stranger Things 4",
+    rating: 0,
+    season: 4,
+    subscriptionCost: 9.99,
+    director: "The Duffer Brothers",
+    leadActors: ["Millie Bobby Brown", "Finn Wolfhard", "Noah Schnapp", "Caleb McLaughlin", "Gaten Matarazzo", "Sadie Sink", "Maya Hawke", "Joe Keery"]
+  }
+  ]
