@@ -1,0 +1,150 @@
+<!--Programmer Table-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Programmers Table</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 10px;
+		}
+    
+    table {
+  border-collapse: collapse;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  width: 100%;
+}
+
+th {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+  color: pink;
+  background-color: #333;
+}
+
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: pink;
+}
+
+tr:hover {
+  background-color: purple;
+}
+
+table caption {
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* Make the table look futuristic */
+table {
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #111;
+  color: #fff;
+}
+
+th {
+  background-color: #888;
+  color: light-purple;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+td {
+  border-bottom: 1px solid #888;
+}
+
+tr:hover {
+  background-color: purple;
+}
+
+	</style>
+</head>
+<body>
+	<h1>Programmers Table</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>DOB</th>
+				<th>Place of Birth</th>
+				<th>Language</th>
+				<th>Achievements</th>
+			</tr>
+		</thead>
+		<tbody>
+			<script>
+				var programmers = [
+					{
+						name: "Ada Lovelace",
+						dob: "December 10, 1815",
+						placeOfBirth: "London, England",
+						language: ["Analytical Engine", "Mathematical algorithms"],
+						achievements: ["First computer programmer", "Proposed the use of computers for tasks beyond calculations"]
+					},
+					{
+						name: "Alan Turing",
+						dob: "June 23, 1912",
+						placeOfBirth: "London, England",
+						language: ["Colossus computer", "Turing Machine"],
+						achievements: ["Father of Computer Science", "Broke the Nazi Enigma code during World War II"]
+					},
+					{
+						name: "Grace Hopper",
+						dob: "December 9, 1906",
+						placeOfBirth: "New York City, United States",
+						language: ["UNIVAC", "COBOL programming language"],
+						achievements: ["Invented the first compiler", "Coined the term 'debugging'"]
+					},
+					{
+						name: "Linus Torvalds",
+						dob: "December 28, 1969",
+						placeOfBirth: "Helsinki, Finland",
+						language: ["Linux operating system", "Git version control system"],
+						achievements: ["Created the Linux kernel", "Revolutionized open-source software development"]
+					},
+					{
+						name: "Brendan Eich",
+						dob: "July 4, 1961",
+						placeOfBirth: "Pittsburgh, United States",
+						language: ["JavaScript programming language"],
+						achievements: ["Invented JavaScript", "Founded the Brave web browser"]
+					},
+					{
+						name: "Guido van Rossum",
+						dob: "January 31, 1956",
+						placeOfBirth: "Netherlands",
+						language: ["Python programming language"],
+						achievements: ["Invented Python", "Served as Benevolent Dictator For Life (BDFL) of Python until 2018"]
+					}
+				];
+				for (var i = 0; i < programmers.length; i++) {
+					document.write("<tr>");
+					document.write("<td>" + programmers[i].name + "</td>");
+					document.write("<td>" + programmers[i].dob + "</td>");
+					document.write("<td>" + programmers[i].placeOfBirth + "</td>");
+					document.write("<td>" + programmers[i].language.join(", ") + "</td>");
+					document.write("<td>" + programmers[i].achievements.join(", ") + "</td>");
+					document.write("</tr>");
+				}
+			</script>
+		</tbody>
+	</table>
+</body>
+</html>
+
+
+
+
